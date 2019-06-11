@@ -50,8 +50,11 @@ Possible APIS(need further research into their documentation):
 * Pre-project: basic HTML Framework for site to understand layout and templates. 
 * First week: create Django project, begin set-up for user logins.
 * Second week: set up database for storing user photos and displaying them on the page
+
     _MVP: Users can log in and upload photos that will display on a main page_
 * Third week: added functionality-- add features to allow users to search memories, implement "Better Features" listed above
+
     _MVP: Site provides visual organization of photos for the user based on: "boxes" or date._
 * Fourth week: nit-pick visuals, fix bugs, if on-track, add "Stretch" Features. 
+
     _MVP: Site provides more context for memories, using an API database to give historical context to memories based on provided date._ 
