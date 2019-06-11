@@ -47,7 +47,7 @@ Possible APIS(need further research into their documentation):
 ![alt text](https://www.schemecolor.com/wp-content/themes/colorsite/include/cc6.php?color0=272324&color1=83b799&color2=e2cd6d&color3=c2b28f&color4=e4d8b4&color5=e86f68&pn=Retro)
 
 ### Schedule: 
-* **Pre-project:** basic HTML Framework for site to understand layout and templates. 
+* **Pre-project:** basic HTML Framework for site to understand layout and templates. Should include some basic CSS.
 * **First week:** create Django project, begin set-up for user logins.
 * Second week: set up database for storing user photos and displaying them on the page
 
