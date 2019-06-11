@@ -12,7 +12,7 @@ Capstone Project: photo-feed app to store user memories and simulate the tactile
 ### Overview
 Memory Box is a personal photo-feed app that helps users handle and let go of physical objects, souveniers, or trinkets, but always keep the memories. 
 
-### User Stories
+### User Story
 I have always been a nostalgic person, collecting small reminders (or "treasures") of important memories or times in my life. Ticket stubs, matchbooks, small rocks and seaglass, postcards, notes from loved ones. 
 
 ![alt text](https://hips.hearstapps.com/hbu.h-cdn.co/assets/cm/15/04/54bf4339ea191_-_1-sendus-0509-xlg.jpg?fill=320:250&resize=480:*)
@@ -42,4 +42,7 @@ Possible APIS(need further research into their documentation):
 * [New York Times Archive API](https://developer.nytimes.com/docs/archive-product/1/overview)
 * [Open Weather Map's historical weather API](https://openweathermap.org/history)
 
-## 
+### Color Scheme:
+
+![alt text](https://www.schemecolor.com/wp-content/themes/colorsite/include/cc6.php?color0=272324&color1=83b799&color2=e2cd6d&color3=c2b28f&color4=e4d8b4&color5=e86f68&pn=Retro)
+
