@@ -47,14 +47,14 @@ Possible APIS(need further research into their documentation):
 ![alt text](https://www.schemecolor.com/wp-content/themes/colorsite/include/cc6.php?color0=272324&color1=83b799&color2=e2cd6d&color3=c2b28f&color4=e4d8b4&color5=e86f68&pn=Retro)
 
 ### Schedule: 
-* Pre-project: basic HTML Framework for site to understand layout and templates. 
-* First week: create Django project, begin set-up for user logins.
+* **Pre-project:** basic HTML Framework for site to understand layout and templates. 
+* **First week:** create Django project, begin set-up for user logins.
 * Second week: set up database for storing user photos and displaying them on the page
 
     _MVP: Users can log in and upload photos that will display on a main page_
-* Third week: added functionality-- add features to allow users to search memories, implement "Better Features" listed above
+* **Third week:** added functionality-- add features to allow users to search memories, implement "Better Features" listed above
 
     _MVP: Site provides visual organization of photos for the user based on: "boxes" or date._
-* Fourth week: nit-pick visuals, fix bugs, if on-track, add "Stretch" Features. 
+* **Fourth week:** nit-pick visuals, fix bugs, if on-track, add "Stretch" Features. 
 
     _MVP: Site provides more context for memories, using an API database to give historical context to memories based on provided date._ 
