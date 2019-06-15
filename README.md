@@ -3,16 +3,13 @@ Capstone Project: photo-feed app to store user memories and simulate the tactile
 
 
 
-
-
-
 # Capstone Proposal
 
 ## Project Name: Memory Box
 ### Overview
 Memory Box is a personal photo-feed app that helps users handle and let go of physical objects, souveniers, or trinkets, but always keep the memories. 
 
-### User Story
+### Background 
 I have always been a nostalgic person, collecting small reminders (or "treasures") of important memories or times in my life. Ticket stubs, matchbooks, small rocks and seaglass, postcards, notes from loved ones. 
 
 ![alt text](https://hips.hearstapps.com/hbu.h-cdn.co/assets/cm/15/04/54bf4339ea191_-_1-sendus-0509-xlg.jpg?fill=320:250&resize=480:*)
@@ -58,3 +55,16 @@ Possible APIS(need further research into their documentation):
 * **Fourth week:** nit-pick visuals, fix bugs, if on-track, add "Stretch" Features. 
 
     _MVP: Site provides more context for memories, using an API database to give historical context to memories based on provided date._ 
+
+### Model, View, and Database Informationn
+the model Memory will include:
+1. image = models.ImageField
+* these images will be saved in django's filesystem but a string is created in the database that references each one. 
+2. memory_box
+* This will be a field that allows the user to categorize memories into separate boxes (like a photo album). Ideally, the user's home page will show the individual boxes/albums and then the user can navigate into the box to display the images. 
+3. Description: a character field allowing the user to add details about the photo/memory
+4. Uploaded at, a DateTimeField of now 
+5. User, defaulting to the current user. This will allow the images to be separated and displayed only to the user that uploaded them. 
+7. album/box- this will allow users to either create a new album or attribute it to an existing album. 
+6. year - this will be a field that the user can use to choose the year of the album created (default of current year). If they're using a pre-created album, the year associated with that album will be assigned. This will allow an API call for headlines or historical events to display, possibly next to the box on a user home screen or once it's been "opened".
+7. album description- if the user's creating an album they'll be able to give a description to the album. 
