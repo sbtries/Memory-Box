@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class=container>
+    <div class="jumbotron jumbotron-fluid bg-info text-white text-center">
+            <div class="container">
+                <h1 class="display-1">Memory Box</h1>
+                <p class="lead">A place to keep your keepsakes but save the space</p>
+            </div>
+        </div>
+    
+        <!-- Content -->
+    
+        <div class="row">
+            <div class="col-md-12 col-lg-6">
+                <div class="mx-auto" style="width: 300px;">
+    
+                    <h1 class="text-center">Sign up now to use Memory Box</h1>
+                    <h3>New Users:</h3>
+                    <form>
+                        <label class="container">
+    
+                            <p class="label-txt">ENTER YOUR EMAIL</p>
+                            <input type="text" class="input">
+                            <div class="line-box">
+                                <div class="line"></div>
+                            </div>
+                        </label>
+                        <label class="container">
+                            <p class="label-txt">ENTER YOUR NAME</p>
+                            <input type="text" class="input">
+                            <div class="line-box">
+                                <div class="line"></div>
+                            </div>
+                        </label>
+                        <label class="container">
+                            <p class="label-txt">ENTER YOUR PASSWORD</p>
+                            <input type="text" class="input">
+                            <div class="line-box">
+                                <div class="line"></div>
+                            </div>
+                        </label>
+                        <button type="submit" class="btn btn-primary btn-sm">submit</button>
+                    </form>
+                    <br>
+    
+                    <!-- Log-in Form, should toggle with button -->
+                    <h3> Current Users:</h3>
+                    <button type="button" id="formButton" class="btn btn-primary btn-lg btn-block">Log In!</button>
+                    <form id="form1">
+                        <br>
+                        <b>Username: <input type="text" name="username">
+                            <br><br>
+                            <b>Password: </b><input type="text" name="password">
+    
+                            <a class="nav-link active" href="/pages/dashboard.html"><button type="button"
+                                    class="btn btn-primary btn-sm" id="submit">Log In</button></a>
+                    </form>
+                </div>
+    
+            </div>
+            <!-- Slider -->
+    
+            <div>
+                    <img src="images/shoebox.png" class="img-fluid" alt="Responsive image">
+            </div>
+        </div>
+    
+    
+        <div class="container text-muted">
+    
+            <!-- Bottom Info Boxes -->
+    
+            <h2 class="display-4 py-5 mt-5 text-center">About Memory Box</h2>
+    
+            <nav class="nav justify-content-center nav-pills flex-column flex-md-row">
+                <a class="nav-link active" href="#reasoning" data-toggle="tab">The Reasoning</a>
+                <a class="nav-link" href="#research" data-toggle="tab">The Research</a>
+                <a class="nav-link" href="#how" data-toggle="tab">How It Works</a>
+            </nav>
+    
+            <div class="tab-content py-5">
+                <div class="tab-pane active" id="reasoning">
+                    <h3>Why Use Memory Box?</h3>
+                    <p>Lorem ninja ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+                        tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                    <p>Lorem ninja ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+                        tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                </div>
+                <div class="tab-pane fade" id="research">
+                    <h3>Proven to Save you Space and Time</h3>
+                    <p>Lorem ninja ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+                        tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                    <p>Lorem ninja ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+                        tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                </div>
+                <div class="tab-pane fade" id="how">
+                    <h3>Get started TODAY</h3>
+                    <p>Lorem ninja ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+                        tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                    <p>Lorem ninja ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+                        tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                </div>
+
+            </div>
+    
+        </div>
+    </div>  
+
+{% endblock %}
