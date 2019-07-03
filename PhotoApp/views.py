@@ -10,11 +10,6 @@ class DashboardView(ListView):
     model = Post
     template_name = 'pages/dashboard.html'
 
-class HomePageView(ListView):
-    model = Post
-    template_name = 'pages/home.html'
-
-
 class CreatePostView(CreateView):
     model = Post
     form_class = PostForm
