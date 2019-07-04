@@ -1,10 +1,10 @@
 from django.contrib import admin
 
-# Register your models here.
-from django.contrib import admin
-
-from .models import Post
+from PhotoApp.models import Post
+from users.models import CustomUser
 
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
-    list_display = ('title', 'date', 'location', 'uploaded_at', 'description',)
+    list_display = ('title', 'date', 'location', 'uploaded_at', 'description', 'app_user')
+
+
