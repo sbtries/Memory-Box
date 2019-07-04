@@ -9,27 +9,33 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
+
                 <li class="nav-item active">
                     <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
+                {% if user.is_authenticated %}
+                <li><a class="nav-link" href="{% url 'dashboard' %}"> dashboard ({{user.username}})</a></li>
+                <li><a class="nav-link" href="{% url 'logout' %}"> logout</a></li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{% url 'dashboard' %}">Dashboard</a>
-                        <a class="dropdown-item" href="{% url 'uploadpage' %}"> Upload Image</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li>
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{% url 'dashboard' %}">Dashboard</a>
+                            <a class="dropdown-item" href="{% url 'uploadpage' %}"> Upload Image</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li>
+                {%else %}
+                <li><a class="nav-link" href="{% url 'login' %}">login</a></li>
+                
+                {% endif%}
+                
                 <!-- <li class="nav-item">
                     <a class="nav-link disabled" href="#">Disabled</a> -->
                 </li>
             </ul>
         </div>
-    </div>
+</div>

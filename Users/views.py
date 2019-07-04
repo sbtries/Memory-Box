@@ -8,6 +8,7 @@ from .forms import CustomUserCreationForm
 
 from .models import CustomUser
 
+
 class HomePageView(CreateView):
     model = CustomUser
     template_name = 'pages/home.html'
