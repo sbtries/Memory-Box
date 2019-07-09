@@ -10,6 +10,7 @@ class Post(models.Model):
     uploaded_at = models.DateTimeField(auto_now_add=True, null=True)
     description = models.TextField(max_length = 200, default=None)
     app_user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True)
+    
     def __str__(self):
-        return self.app_user
+        return self.title
 

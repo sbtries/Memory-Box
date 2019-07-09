@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect 
+from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 from django.views.generic import ListView, CreateView
@@ -7,17 +7,15 @@ from PhotoApp.models import Post
 from .forms import PostForm
 from users.forms import CustomUserCreationForm
 
-@login_required
-def dashboard(request):
-    return render (request, 'pages/dashboard.html')
+class DashboardView(ListView):
+    model = Post
+    template_name = 'pages/dashboard.html'
 
+    def user_photos(request, user):
+        user_photos = Post.objects.get(app_user=user)
+        user_photos.current = request.user
+        return render(request, 'pages/dashboard.html')
 
-@login_required
-def user_photos(request, user):
-    user_photos = Post.objects.get(app_user=user)
-    user_photos.current = request.user
-    print(request.user)
-    return redirect ('dashboard')
 
     # def user_photos(self, request):
     #     user = Post.objects.get(id=app_user)
@@ -35,5 +33,4 @@ class CreatePostView(CreateView):
         form.instance.app_user = self.request.user
         return super().form_valid(form)
 
-#add method that saves user to the database
-
+# add method that saves user to the database
