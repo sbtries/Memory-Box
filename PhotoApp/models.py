@@ -11,5 +11,5 @@ class Post(models.Model):
     description = models.TextField(max_length = 200, default=None)
     app_user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True)
     def __str__(self):
-        return self.title
+        return self.app_user
 
