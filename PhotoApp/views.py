@@ -9,7 +9,7 @@ from users.forms import CustomUserCreationForm
 
 @login_required
 def dashboard(request):
-    return redirect('pages/dashboard.html')
+    return render (request, 'pages/dashboard.html')
 
 
 @login_required
@@ -17,7 +17,7 @@ def user_photos(request, user):
     user_photos = Post.objects.get(app_user=user)
     user_photos.current = request.user
     print(request.user)
-    return redirect ('pages/dashboard.html')
+    return redirect ('dashboard')
 
     # def user_photos(self, request):
     #     user = Post.objects.get(id=app_user)
