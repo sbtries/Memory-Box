@@ -10,11 +10,19 @@ from users.forms import CustomUserCreationForm
 class DashboardView(ListView):
     model = Post
     template_name = 'pages/dashboard.html'
-
-    def user_photos(request, user):
-        user_photos = Post.objects.get(app_user=user)
-        user_photos.current = request.user
-        return render(request, 'pages/dashboard.html')
+    context_object_name = 'photos'
+    print('HEY')
+    def get_queryset(self):
+        return Post.objects.filter(app_user=self.request.user)
+       
+    # def user_photos(self, request):
+    #     print('HELLO is this running?!?!')
+    #     user_photos = Post.objects.get(app_user=request.user)
+    #     context = {
+    #         'photos': user_photos,
+    #     }
+    #     print(user_photos)
+    #     return render(request, context, 'pages/dashboard.html')
 
 
     # def user_photos(self, request):
@@ -22,6 +30,7 @@ class DashboardView(ListView):
     #     user.current_user = request.user
     #     print('hello!')
     #     return super().user_photos()
+
 
 class CreatePostView(CreateView):
     model = Post
