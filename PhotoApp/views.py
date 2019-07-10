@@ -7,9 +7,18 @@ from PhotoApp.models import Post
 from .forms import PostForm
 from users.forms import CustomUserCreationForm
 
+
 class DashboardView(ListView):
-    model = Post
+    model = Album
     template_name = 'pages/dashboard.html'
+    context_object_name = 'albums'
+
+    def get_queryset(self):
+        return Albums.objects.filter(app_user=self.request.user)
+
+class PostView(ListView):
+    model = Post
+    template_name = 'pages/album.html'
     context_object_name = 'photos'
     print('HEY')
     def get_queryset(self):

@@ -14,3 +14,9 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
+class Album(models.Model):
+    title = models.CharField(max_length=250)
+    images = models.ManyToManyField(Post, blank=True)
+    def __str__(self):
+        return self.title
+
