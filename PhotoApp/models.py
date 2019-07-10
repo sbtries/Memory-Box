@@ -1,6 +1,8 @@
 from django.contrib.auth import get_user_model
 from django.db import models
 from django.conf import settings
+from django import forms
+
 
 class Post(models.Model):
     title = models.TextField(max_length=50, blank=True, null=True)
@@ -9,8 +11,9 @@ class Post(models.Model):
     location = models.TextField(max_length=200, default=None)
     uploaded_at = models.DateTimeField(auto_now_add=True, null=True)
     description = models.TextField(max_length = 200, default=None)
-    app_user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True)
-    
+    app_user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True, )
+    album = models.ForeignKey('Album', on_delete=models.CASCADE, null=True, blank=True, related_name='album_title')
+
     def __str__(self):
         return self.title
 
@@ -23,4 +26,5 @@ class Album(models.Model):
     
     def __str__(self):
         return self.title
+
 

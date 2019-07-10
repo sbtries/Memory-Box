@@ -30,6 +30,7 @@ class PostDetails(ListView):
     # print('HEY')
     # def get_queryset(self):
     #     return Post.objects.filter(app_user=self.request.user)       
+      
     # def user_photos(self, request):
     #     print('HELLO is this running?!?!')
     #     user_photos = Post.objects.get(app_user=request.user)
@@ -61,7 +62,7 @@ class CreateAlbumView(CreateView):
     form_class = AlbumForm
     template_name = 'pages/albumpage.html'
     success_url = reverse_lazy('dashboard')
-
+    
     def form_valid(self, form):
         form.instance.app_user = self.request.user
         return super().form_valid(form)
