@@ -15,8 +15,12 @@ class Post(models.Model):
         return self.title
 
 class Album(models.Model):
-    title = models.CharField(max_length=250)
-    images = models.ManyToManyField(Post, blank=True)
+    title = models.CharField(max_length=250, blank=True, null=True, default=None)
+    images = models.ManyToManyField(Post, blank=True, null=True, default=None)
+    year = models.CharField(max_length=250, blank=True, null=True, default=None)
+    description = models.CharField(max_length=250, blank=True, null=True, default=None)
+    app_user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True)
+    
     def __str__(self):
         return self.title
 
