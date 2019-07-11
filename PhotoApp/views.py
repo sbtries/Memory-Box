@@ -56,6 +56,15 @@ class CreatePostView(CreateView):
     def form_valid(self, form):
         form.instance.app_user = self.request.user
         return super().form_valid(form)
+        
+class CreatePostViewAlbum(CreateView): 
+    model = Album
+    form_class = PostForm
+    template_name = 'pages/uploadpage.html'
+    success_url = reverse_lazy('dashboard')
+    def get_queryset(self):
+        return Album.objects.filter(created_by=self.request.user)
+
 
 class CreateAlbumView(CreateView):
     model = Album

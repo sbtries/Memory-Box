@@ -28,17 +28,17 @@
                 <a href="{% url 'login' %}">login</a> |
                 <h2>Sign up</h2>
                 <div>
-                <form method="post">
-                    {% csrf_token %}
-                    {{ form|crispy }}
-                    <button type="submit">Sign up</button>
-                </form>
-                 </div>
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <button type="submit">Sign up</button>
+                    </form>
+                </div>
                 {% endif %}
             </div>
 
             <div>
-                <img src="images/shoebox.png" class="img-fluid" alt="Responsive image">
+                <img src="{% static 'images/memorybox.png'  %}" class="img-fluid" alt="Responsive image">
             </div>
         </div>
 
@@ -57,6 +57,10 @@
 
             <div class="tab-content py-5">
                 <div class="tab-pane active" id="reasoning">
+                    <div>
+                        <img src="{% static 'images/books.jpg'  %}" class="img-fluid" alt="Responsive image">
+                    </div>
+
                     <h3>Why Use Memory Box?</h3>
                     <p>Lorem ninja ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
                         tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
@@ -64,6 +68,10 @@
                         tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
                 </div>
                 <div class="tab-pane fade" id="research">
+                    <div>
+                        <img src="{% static 'images/knowledge.png'  %}" class="img-fluid" alt="Responsive image">
+                    </div>
+
                     <h3>Proven to Save you Space and Time</h3>
                     <p>Lorem ninja ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
                         tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
@@ -71,6 +79,10 @@
                         tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
                 </div>
                 <div class="tab-pane fade" id="how">
+                        <div>
+                                <img src="{% static 'images/trophies.jpg'  %}" class="img-fluid" alt="Responsive image">
+                            </div>
+                
                     <h3>Get started TODAY</h3>
                     <p>Lorem ninja ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
                         tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>

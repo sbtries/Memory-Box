@@ -2,6 +2,8 @@ from django.contrib.auth import get_user_model
 from django.db import models
 from django.conf import settings
 from django import forms
+from django.forms import ModelChoiceField
+
 
 
 class Post(models.Model):
@@ -12,7 +14,7 @@ class Post(models.Model):
     uploaded_at = models.DateTimeField(auto_now_add=True, null=True)
     description = models.TextField(max_length = 200, default=None)
     app_user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True, related_name='user_app_user')
-    album = models.ForeignKey('Album', on_delete=models.CASCADE, null=True, blank=True, related_name='album_album')
+    album = models.ForeignKey('Album', on_delete=models.CASCADE, null=True, blank=True, related_name='Album')
 
     def __str__(self):
         return self.title
