@@ -4,8 +4,8 @@
 
 {% block content %}
 
-<h1>Memories</h1>
-<h1> {{ user.username }} dashboard</h1>
+<h1>Memory Boxes</h1>
+<h3> {{ user.username }} dashboard</h3>
 <div class=container>
 
   <div class="row" id="row">
@@ -13,21 +13,24 @@
     <a href="{% url 'uploadpage' %}">
       <div class="col-md-12 col-lg-4">
         <img src="{% static 'images/newmemory.png'  %}" class="img-fluid" alt="Responsive image">
+        <h3>New Memory</h3>
     </a>
-    <h3>New Memory</h3>
+
   </div>
 
   <a href="{% url 'createalbum' %}">
     <div class="col-md-12 col-lg-4">
       <img src="{% static 'images/newmemorybox.png'  %}" class="img-fluid" alt="Responsive image">
+      <h3>Create New Memory Box</h3>
   </a>
-  <h3>Create New Memory Box</h3>
+
 </div>
 <a href="#">
   <div class="col-md-12 col-lg-4">
     <img src="{% static 'images/boxstack.png'  %}" class="img-fluid" alt="Responsive image">
+    <h3>See All Memories</h3>
 </a>
-<h3>See All Memories</h3>
+
 </div>
 </div>
 
