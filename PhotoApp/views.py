@@ -15,11 +15,6 @@ class DashboardView(ListView):
     def get_queryset(self):
         return Album.objects.filter(app_user=self.request.user)
 
-class AlbumView(ListView):
-    model = Album
-    template_name = 'pages/album.html'
-    context_object_name = 'albums'
-
 def album_detail(request, pk):
     album = Album.objects.get(pk=pk)
     context = {
@@ -28,11 +23,19 @@ def album_detail(request, pk):
     return render(request, 'pages/album_detail.html', context)
 
 
+class AllPostView(ListView):
+    model = Post
+    template_name = 'pages/allposts.html'
+    context_object_name = 'posts'
+    def get_queryset(self):
+        return Post.objects.filter(app_user=self.request.user)
+
+
 class PostView(ListView):
     model = Post
     template_name = 'pages/album.html'
     context_object_name = 'photos'
-    print('HEY')
+
     def get_queryset(self):
         return Post.objects.filter(app_user=self.request.user)
 
