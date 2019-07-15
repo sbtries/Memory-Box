@@ -22,7 +22,6 @@ def album_detail(request, pk):
     }
     return render(request, 'pages/album_detail.html', context)
 
-
 class AllPostView(ListView):
     model = Post
     template_name = 'pages/allposts.html'
@@ -78,8 +77,10 @@ class CreatePostViewAlbum(CreateView):
     form_class = PostForm
     template_name = 'pages/uploadpage.html'
     success_url = reverse_lazy('dashboard')
+
     def get_queryset(self):
         return Album.objects.filter(created_by=self.request.user)
+
 
 
 class CreateAlbumView(CreateView):
