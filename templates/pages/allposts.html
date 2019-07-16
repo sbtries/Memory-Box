@@ -3,12 +3,10 @@
 {% load static %}
 
 {% block content %}
-
-{% for each in posts %}
-    {% if post.image %}
-        <img src="{{ post.image.url }}">
-    {% endif %}
-
-{% endfor %}
-</ul>
-{% endblock %}
+<ul>
+    {% for post in object_list %}
+      <h2>{{ post.title }}</h2>
+      <img src="{{ post.image.url}}" alt="{{ post.title }}">
+    {% endfor %}
+  </ul>
+  {% endblock %}

@@ -25,10 +25,33 @@ def album_detail(request, pk):
 class AllPostView(ListView):
     model = Post
     template_name = 'pages/allposts.html'
-    context_object_name = 'posts'
-    def get_queryset(self):
-        return Post.objects.filter(app_user=self.request.user)
 
+    def form_valid(self, form):
+        form.instance.app_user = self.request.user
+        return super().form_valid(form)
+
+        
+        # def user_photos(self, request):
+    #     print('HELLO is this running?!?!')
+    #     user_photos = Post.objects.get(app_user=request.user)
+    #     context = {
+    #         'photos': user_photos,
+    #     }
+    #     print(user_photos)
+    #     return render(request, context, 'pages/dashboard.html')
+
+
+
+# class AllPostView(ListView):
+#     model = Post
+#     template_name = 'pages/allposts.html'
+#     context_object_name = 'posts'
+#     # def get_queryset(self):
+#     #     return Post.objects.filter(app_user=self.request.user)
+
+#     def user_info(self, form):
+#         form.instance.app_user = self.request.user
+#         return super().user_info(form)
 
 class PostView(ListView):
     model = Post
@@ -42,9 +65,9 @@ class PostDetails(ListView):
     model = Post
     template_name = 'pages/postdetails.html'
     context_object_name = 'photos'
-    # print('HEY')
-    # def get_queryset(self):
-    #     return Post.objects.filter(app_user=self.request.user)       
+    print('HEY')
+    def get_queryset(self):
+        return Post.objects.filter(app_user=self.request.user)       
       
     # def user_photos(self, request):
     #     print('HELLO is this running?!?!')
@@ -80,7 +103,6 @@ class CreatePostViewAlbum(CreateView):
 
     def get_queryset(self):
         return Album.objects.filter(created_by=self.request.user)
-
 
 
 class CreateAlbumView(CreateView):
