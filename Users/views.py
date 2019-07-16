@@ -14,3 +14,7 @@ class HomePageView(CreateView):
     template_name = 'pages/home.html'
     form_class = CustomUserCreationForm
     success_url = reverse_lazy('dashboard')
+
+
+class Test Commit!():
+    TeST
