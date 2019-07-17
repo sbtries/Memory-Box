@@ -26,11 +26,10 @@ class AllPostView(ListView):
     model = Post
     template_name = 'pages/allposts.html'
 
-    def form_valid(self, form):
-        form.instance.app_user = self.request.user
-        return super().form_valid(form)
+    def get_queryset(self):
+        return Post.objects.filter(app_user=self.request.user)
 
-        
+
         # def user_photos(self, request):
     #     print('HELLO is this running?!?!')
     #     user_photos = Post.objects.get(app_user=request.user)
@@ -90,6 +89,13 @@ class CreatePostView(CreateView):
     form_class = PostForm
     template_name = 'pages/uploadpage.html'
     success_url = reverse_lazy('dashboard')
+
+    def form_submit(self):
+        if request.method == "POST":
+            form = PostForm(request.POST, request=request)
+            # do whatever
+        else:
+            form = PostForm(request=request)
 
     def form_valid(self, form):
         form.instance.app_user = self.request.user

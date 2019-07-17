@@ -3,10 +3,31 @@
 {% load static %}
 
 {% block content %}
-<ul>
+<div class="row">
+
     {% for post in object_list %}
-      <h2>{{ post.title }}</h2>
-      <img src="{{ post.image.url}}" alt="{{ post.title }}">
+    <div class="column">
+
+        <h2>{{ post.title }}</h2>
+            <img class="photo-active" src="{{ post.image.url}}" alt="{{ post.title }}" onclick="enlargeImage(this);">
+    </div>
     {% endfor %}
-  </ul>
-  {% endblock %}
+
+</div>
+
+</ul>
+</div>
+</div>
+
+<div class="container">
+    <!-- Close the image -->
+    <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+
+    <!-- Expanded image -->
+    <img id="expandedImg" style="width:100%">
+
+    <!-- Image text -->
+    <div id="imgtext"></div>
+</div>
+
+{% endblock %}
