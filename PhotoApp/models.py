@@ -3,7 +3,6 @@ from django.db import models
 from django.conf import settings
 from django import forms
 
-
 class Post(models.Model):
     title = models.TextField(max_length=50, blank=True, null=True)
     image = models.ImageField(upload_to='images/', blank=True, null=True)
