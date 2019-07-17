@@ -3,10 +3,16 @@ from .models import Post, Album
 
 class PostForm(forms.ModelForm):
     album = forms.ModelChoiceField(queryset=Album.objects.all(), empty_label="No Albums Created")
+    
     def __init__(self, *args, **kwargs):
+        print(kwargs)
         self.request = kwargs.pop("request")
         super(PostForm, self).__init__(*args, **kwargs)
-        self.fields["title"].queryset = Album.objects.filter(user=self.request.user)
+        user_albums = Album.objects.filter(app_user=self.request.user)
+        self.fields["album"].queryset = user_albums
+        print(user_albums)
+
+        # self.fields["title"].queryset = Album.objects.filter(app_user=self.request.user)
 
     class Meta:
         model = Post

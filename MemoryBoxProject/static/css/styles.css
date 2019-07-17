@@ -140,9 +140,13 @@ h2.active {
     cursor: pointer;
   }
 
-
   .column {
     float: left;
     width: 25%;
     padding: 10px;
+  }
+
+  .container {
+    position: relative;
+    display: none;
   }

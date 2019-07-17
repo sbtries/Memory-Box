@@ -90,12 +90,11 @@ class CreatePostView(CreateView):
     template_name = 'pages/uploadpage.html'
     success_url = reverse_lazy('dashboard')
 
-    def form_submit(self):
-        if request.method == "POST":
-            form = PostForm(request.POST, request=request)
-            # do whatever
+    def get_form(self):
+        if self.request.method == "POST":
+            return PostForm(self.request.POST, request=self.request)
         else:
-            form = PostForm(request=request)
+            return PostForm(request=self.request)
 
     def form_valid(self, form):
         form.instance.app_user = self.request.user
