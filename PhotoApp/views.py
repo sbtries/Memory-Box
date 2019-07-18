@@ -95,13 +95,15 @@ class CreatePostView(CreateView):
 
     def get_form(self):
         if self.request.method == "POST":
-            return PostForm(self.request.POST, request=self.request)
+            return PostForm(self.request.POST, self.request.FILES, request=self.request)
         else:
             return PostForm(request=self.request)
 
     def form_valid(self, form):
         form.instance.app_user = self.request.user
+        form.save()
         return super().form_valid(form)
+
         
 class CreatePostViewAlbum(CreateView): 
     model = Album
