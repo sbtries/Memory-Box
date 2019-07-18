@@ -145,8 +145,3 @@ h2.active {
     width: 25%;
     padding: 10px;
   }
-
-  .container {
-    position: relative;
-    display: none;
-  }

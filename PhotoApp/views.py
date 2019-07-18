@@ -17,10 +17,13 @@ class DashboardView(ListView):
 
 def album_detail(request, pk):
     album = Album.objects.get(pk=pk)
+    images = Post.objects.filter(album=album)
     context = {
-        'album': album
+        'album': album,
+        'images': images
     }
     return render(request, 'pages/album_detail.html', context)
+
 
 class AllPostView(ListView):
     model = Post

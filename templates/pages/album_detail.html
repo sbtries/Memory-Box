@@ -7,10 +7,9 @@
 
 <div class="row">
     <div class="col-md-8">
-        {% for image in album.album_images.title %}
-        <h1>hello</h1>
+        {% for image in images %}
         {{ image }}
-        <img src="{{ image.album_image.image.url}}" alt="{{ image.album_image.title }}">
+        <img src="{{ image.image.url}}" alt="{{ image.album_image.title }}">
         {% endfor %}
 
         <div>{{ album.album_set }}</div>
