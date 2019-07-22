@@ -19,7 +19,7 @@ class Post(models.Model):
 class Album(models.Model):
     album_title = models.CharField(max_length=250, blank=True, null=True, default=None)
     # album_images = models.ForeignKey(Post, on_delete=models.CASCADE, blank=True, null=True, default=None, related_name='post_images')
-    album_year = models.CharField(max_length=250, blank=True, null=True, default=None)
+    album_year = models.DecimalField(max_digits=4, decimal_places=0, blank=True, null=True, default=None)
     album_description = models.CharField(max_length=250, blank=True, null=True, default=None)
     app_user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True, related_name='user_album')
     
