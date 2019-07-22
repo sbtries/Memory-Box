@@ -8,8 +8,14 @@ class PostForm(forms.ModelForm):
 
     class Meta:
         model = Post
-        fields = ['title', 'image', 'location', 'description', 'album']
-
+        fields = [
+        'title', 
+        'image', 
+        'location', 
+        'description', 
+        'album'
+        ]
+        
     def __init__(self, *args, **kwargs):
         print(kwargs)
         self.request = kwargs.pop("request")

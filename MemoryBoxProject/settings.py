@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'PhotoApp',
     'users',
+    'django.forms',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
