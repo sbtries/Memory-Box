@@ -12,6 +12,19 @@ function enlargeImage(imgs) {
     // Show the container element (hidden with CSS)
     expandImg.parentElement.style.display = "block";
   }
+// sticky sidebar
+  // let sidebar = document.getElementById('sidebar');
+  // Stickyfill.add(sidebar);
 
-  let sidebar = document.getElementById('sidebar');
-  Stickyfill.add(sidebar);
+
+// hovering album images
+  function hover(element) {
+    element.setAttribute('src', '{% static 'images/open-box.png' %}');
+  }
+  
+  function unhover(element) {
+    element.setAttribute('src', 'http://dummyimage.com/100x100/000/fff');
+  }
+
+
+

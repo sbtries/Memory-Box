@@ -165,8 +165,39 @@ h2.active {
 }
 
 .make-me-sticky {
-        position: -webkit-sticky;
-        position: sticky;
-        top: 0;
-        padding: 0 15px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    padding: 0 15px;
 }
+
+/* zoom features */
+
+#thumbnail:hover {
+        position:relative;
+        top:-25px;
+        left:-35px;
+        width:80%;
+        height:auto;
+        display:block;
+        z-index:999;
+    }
+
+#scale {
+    text-align: center;
+    /* to align all inline content inside the div */
+}
+
+#scale img {
+    width: 150px;
+    transition: 0.4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    -moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -ms-transition: all .4s ease-in-out;
+}
+
+#scale img:hover {
+    width: 80%;
+}
+
