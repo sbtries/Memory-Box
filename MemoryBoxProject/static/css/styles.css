@@ -99,49 +99,74 @@ h2.active {
     background-color: #FFFFFF;
 }
 
-#selected_img
- {
- max-width: 800px;
- width: 100%;
- height: auto;
- margin: 0 auto;
- }
- #selected_img img
- {
- width: 100%;
- height: auto;
- }
- #image_list li
- {
- width: 30%;
- display: inline-block;
- max-height: 250px;
- }
- #image_list li img
- {
- width: 100%;
- height: auto;
- }
+#selected_img {
+    max-width: 800px;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
 
- .column img:hover {
+#selected_img img {
+    width: 100%;
+    height: auto;
+}
+
+#image_list li {
+    width: 30%;
+    display: inline-block;
+    max-height: 250px;
+}
+
+#image_list li img {
+    width: 100%;
+    height: auto;
+}
+
+.column img:hover {
     opacity: 1;
-  }
-  .column img {
-    opacity: 0.8; 
-    cursor: pointer; 
-  }
+}
 
-  .closebtn {
+.column img {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.closebtn {
     position: absolute;
     top: 10px;
     right: 5px;
     color: white;
     font-size: 35px;
     cursor: pointer;
-  }
+}
 
-  .column {
+.column {
     float: left;
     width: 20%;
     padding: 5px;
-  }
+}
+
+.content-section {
+    min-height: 2000px;
+}
+
+.sidebar-section {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.sidebar-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.make-me-sticky {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        padding: 0 15px;
+}

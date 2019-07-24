@@ -12,3 +12,6 @@ function enlargeImage(imgs) {
     // Show the container element (hidden with CSS)
     expandImg.parentElement.style.display = "block";
   }
+
+  let sidebar = document.getElementById('sidebar');
+  Stickyfill.add(sidebar);

@@ -3,25 +3,47 @@
 {% load static %}
 
 {% block content %}
-<div class="row">
-    {% for post in object_list %}
-    <div class="column">
-
-        <h2>{{ post.title }}</h2>
-            <img class="photo-active" src="{{ post.image.url}}" alt="{{ post.title }}" onclick="enlargeImage(this);">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <div class="title-section">
+                <h1>All Memories</h1>
+            </div>
+        </div>
     </div>
-    {% endfor %}
+
+
+    <div class="row">
+        <div class="col-7">
+
+            <div class="content-section">
+                <div class="container">
+                    {% for post in object_list %}
+
+                    <h2>{{ post.title }}</h2>
+                    <img class="photo-active" src="{{ post.image.url}}" alt="{{ post.title }}"
+                        onclick="enlargeImage(this);">
+                {% endfor %}
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-5">
+            <div class="sidebar-item">
+                <div class="make-me-sticky">
+
+                    <!-- Close the image -->
+                    <div onclick="this.parentElement.style.display='none'" class="closebtn">&times;</div>
+
+                    <!-- Expanded image -->
+                    <img id="expandedImg" style="width:100%; height:100%;">
+
+                    <!-- Image text -->
+                    <div id="imgtext"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-
-<div class="container">
-    <!-- Close the image -->
-    <div onclick="this.parentElement.style.display='none'" class="closebtn">&times;</div>
-
-    <!-- Expanded image -->
-    <img id="expandedImg" 	style="width:100%; height:100%;">>
-
-    <!-- Image text -->
-    <div id="imgtext"></div>
-</div>
-
 {% endblock %}
