@@ -9,12 +9,30 @@
     <div class="col-md-8">
         {% for image in images %}
         {{ image }}
-        <img src="{{ image.image.url}}" alt="{{ image.album_image.title }}">
+        <img id="myImg" src="{{ image.image.url}}" alt="{{ image.album_image.title }}" onclick="enlargeImage(this);">
         {% endfor %}
 
-        <div>{{ album.album_set }}</div>
-        
+        <div class="row">{{ album.album_set }}</div>
+
     </div>
+
+
+
+
+<div class="modal">
+    <!-- Close the image -->
+    <div onclick="this.parentElement.style.display='none'" class="closebtn">&times;</div>
+
+    <!-- Expanded image -->
+    <img id="expandedImg" style="width:100%; height:100%;">
+
+    <!-- Image text -->
+    <div id="imgtext"></div>
+</div>
+
+
+
+
 
     <div class="col-md-4">
         <h5>Description:</h5>
@@ -25,4 +43,7 @@
     </div>
 
 </div>
+
+<script src="{% static 'js/modal.js' %}"></script>
+
 {% endblock %}

@@ -6,6 +6,7 @@ function enlargeImage(imgs) {
     // Get the image text
     let imgText = document.getElementById("imgtext");
     // Use the same src in the expanded image as the image being clicked on from the grid
+    let imgDescription = document.getElementById("imgdescription")
     expandImg.src = imgs.src;
     // Use the value of the alt attribute of the clickable image as text inside the expanded image
     imgText.innerHTML = imgs.alt;

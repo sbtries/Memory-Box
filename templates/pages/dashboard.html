@@ -5,78 +5,79 @@
 {% block content %}
 
 <h3> {{ user.username }} dashboard</h3>
-<div class=container>
-
+<div class="container h-100">
+    <div class="row h-100 justify-content-center align-items-center">
   <div class="row" id="row">
 
-      <div class="col-md-12 col-lg-4">
+    <div class="col-md-12 col-lg-4">
 
       <div class="vividworknav">
 
-    <a href="{% url 'uploadpage' %}">
-        <img id="thumbnail" src="{% static 'images/newmemory.png'  %}" class="img-fluid" alt="Responsive image">
-        <div class="work-text-content">
+        <a href="{% url 'uploadpage' %}">
+          <img src="{% static 'images/newmemory.png'  %}" class="img-fluid" alt="Responsive image">
+          <div class="work-text-content">
 
-        <h3>New Memory</h3>
-        </div>
-    </a>
-  </div>
+            <h3>New Memory</h3>
+          </div>
+        </a>
+      </div>
+    </div>
+
+
+    <div class="col-md-12 col-lg-4">
+      <div class="vividworknav">
+        <a href="{% url 'createalbum' %}">
+          <img src="{% static 'images/newmemorybox.png'  %}" class="img-fluid" alt="Responsive image">
+          <div class="work-text-content">
+
+            <h3>Create New Memory Box</h3>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="col-md-12 col-lg-4">
+
+      <div class="vividworknav">
+        <a href="{% url 'allposts' %}">
+          <div class="view overlay zoom">
+            <img  src="{% static 'images/boxstack.png'  %}" class="img-fluid" alt="Responsive image">
+            <div class="work-text-content">
+              <h3>See All Memories</h3>
+            </div>
+        </a>
       </div>
 
 
-  <div class="col-md-12 col-lg-4">
-    <div class="vividworknav">
-      <a href="{% url 'createalbum' %}">
-        <img id="thumbnail" src="{% static 'images/newmemorybox.png'  %}" class="img-fluid" alt="Responsive image">
-        <div class="work-text-content">
-
-          <h3>Create New Memory Box</h3>
-        </div>
-      </a>
     </div>
+
+    
   </div>
 
-  <div class="col-md-12 col-lg-4">
+  <div class=container>
+    <h1>Albums</h1>
+    <div class="row">
+      {% for album in albums %}
+      <div class="col-md-4">
+        <a href="{% url 'album_detail' album.pk %}">
 
-    <div class="vividworknav">
-      <a href="{% url 'allposts' %}">
-        <div class="view overlay zoom">
-          <img id="thumbnail" src="{% static 'images/boxstack.png'  %}" class="img-fluid" alt="Responsive image">
-          <div class="work-text-content">
-            <h3>See All Memories</h3>
+          <div class="card mb-2">
+            <img class="card-img-top" id="album-image" src="{% static 'images/closedbox.png' %}"
+              onmouseover="this.src='{% static 'images/openbox.png' %}'"
+              onmouseout="this.src='{% static 'images/closedbox.png' %}'" border="0" alt="" />
+            <div class="card-body">
+              <h5 class="card-title">{{ album.album_title }}</h5>
+              <p class="card-text">{{ album.album_description }}</p>
+              <a href="{% url 'album_detail' album.pk %}" class="btn btn-primary">
+                Read More
+              </a>
+            </div>
           </div>
-      </a>
+        </a>
+      </div>
+      {% endfor %}
     </div>
-
-
   </div>
-</div>
-
-
-<div class=container>
-  <h1>Albums</h1>
-  <div class="row">
-    {% for album in albums %}
-    <div class="col-md-4">
-      <a href="#">
-
-        <div class="card mb-2">
-          <img class="card-img-top" id="album-image" src="{% static 'images/closedbox.png' %}"
-            onmouseover="this.src='{% static 'images/openbox.png' %}'"
-            onmouseout="this.src='{% static 'images/closedbox.png' %}'" border="0" alt="" />
-          <div class="card-body">
-            <h5 class="card-title">{{ album.album_title }}</h5>
-            <p class="card-text">{{ album.album_description }}</p>
-            <a href="{% url 'album_detail' album.pk %}" class="btn btn-primary">
-              Read More
-            </a>
-          </div>
-        </div>
-      </a>
-    </div>
-    {% endfor %}
-  </div>
-</div>
 </div>
 
 
