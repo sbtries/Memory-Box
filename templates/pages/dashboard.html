@@ -5,35 +5,51 @@
 {% block content %}
 
 <h3> {{ user.username }} dashboard</h3>
-<div class=container >
+<div class=container>
 
   <div class="row" id="row">
 
-    <a href="{% url 'uploadpage' %}">
       <div class="col-md-12 col-lg-4">
-        <img id="thumbnail" src="{% static 'images/newmemory.png'  %}" class="img-fluid" alt="Responsive image">
-        <h3>New Memory</h3>
-    </a>
 
+      <div class="vividworknav">
+
+    <a href="{% url 'uploadpage' %}">
+        <img id="thumbnail" src="{% static 'images/newmemory.png'  %}" class="img-fluid" alt="Responsive image">
+        <div class="work-text-content">
+
+        <h3>New Memory</h3>
+        </div>
+    </a>
+  </div>
+      </div>
+
+
+  <div class="col-md-12 col-lg-4">
+    <div class="vividworknav">
+      <a href="{% url 'createalbum' %}">
+        <img id="thumbnail" src="{% static 'images/newmemorybox.png'  %}" class="img-fluid" alt="Responsive image">
+        <div class="work-text-content">
+
+          <h3>Create New Memory Box</h3>
+        </div>
+      </a>
+    </div>
   </div>
 
-  <a href="{% url 'createalbum' %}">
-    <div class="col-md-12 col-lg-4">
-      <img id="thumbnail" src="{% static 'images/newmemorybox.png'  %}" class="img-fluid" alt="Responsive image">
-      <h3>Create New Memory Box</h3>
-      
-  </a>
-
-</div>
-<a href="{% url 'allposts' %}">
   <div class="col-md-12 col-lg-4">
-      <div class="view overlay zoom">
-    <img id="thumbnail" src="{% static 'images/boxstack.png'  %}" class="img-fluid" alt="Responsive image">
-    
-    <h3>See All Memories</h3>
-</a>
 
-</div>
+    <div class="vividworknav">
+      <a href="{% url 'allposts' %}">
+        <div class="view overlay zoom">
+          <img id="thumbnail" src="{% static 'images/boxstack.png'  %}" class="img-fluid" alt="Responsive image">
+          <div class="work-text-content">
+            <h3>See All Memories</h3>
+          </div>
+      </a>
+    </div>
+
+
+  </div>
 </div>
 
 
@@ -44,19 +60,18 @@
     <div class="col-md-4">
       <a href="#">
 
-      <div class="card mb-2">
-        <img class="card-img-top" id="album-image" src="{% static 'images/closedbox.png' %}" 
-        onmouseover="this.src='{% static 'images/openbox.png' %}'"
-        onmouseout="this.src='{% static 'images/closedbox.png' %}'"
-        border="0" alt=""/>
-        <div class="card-body">
-          <h5 class="card-title">{{ album.album_title }}</h5>
-          <p class="card-text">{{ album.album_description }}</p>
-          <a href="{% url 'album_detail' album.pk %}" class="btn btn-primary">
-            Read More
-          </a>
+        <div class="card mb-2">
+          <img class="card-img-top" id="album-image" src="{% static 'images/closedbox.png' %}"
+            onmouseover="this.src='{% static 'images/openbox.png' %}'"
+            onmouseout="this.src='{% static 'images/closedbox.png' %}'" border="0" alt="" />
+          <div class="card-body">
+            <h5 class="card-title">{{ album.album_title }}</h5>
+            <p class="card-text">{{ album.album_description }}</p>
+            <a href="{% url 'album_detail' album.pk %}" class="btn btn-primary">
+              Read More
+            </a>
+          </div>
         </div>
-      </div>
       </a>
     </div>
     {% endfor %}
