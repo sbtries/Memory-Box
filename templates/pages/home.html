@@ -8,7 +8,10 @@
 <div class=container-fluid>
     <div class="jumbotron jumbotron-fluid bg-info text-white text-center">
         <div class="container">
-            <h1 class="display-1">Memory Box</h1>
+            <div>
+                <h1 class="display-1">Memory Box</h1>
+                <img src="{% static 'images/memorybox.png'  %}" class="img-fluid" alt="Responsive image">
+            </div>
             <p class="lead">A place to keep your keepsakes but save the space</p>
         </div>
     </div>
@@ -17,14 +20,46 @@
 
     <div class="row">
         <div class="col-md-12 col-lg-6">
-            <div class="mx-auto" style="width: 300px;">
+            <div class="mx-auto" style="width: ;">
 
-                <h1 class="text-center">Sign up now to use Memory Box</h1>
                 {% if user.is_authenticated %}
                 Hi {{ user.username }}!
-                <p><a href="{% url 'logout' %}">logout</a></p>
+
+                <div class="row">
+                    <div class="col">
+                        <div class="vividworknav">
+
+                            <a href="{% url 'uploadpage' %}">
+                                <img src="{% static 'images/holding-box.png'  %}" class="img-fluid"
+                                    alt="Responsive image">
+                                <div class="work-text-content">
+
+                                    <h3>Go to Dashboard</h3>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <div class="col">
+                        <div class="vividworknav">
+
+                            <a href="{% url 'logout' %}">
+                                <img src="{% static 'images/holding-box.png'  %}" class="img-fluid"
+                                    alt="Responsive image">
+                                <div class="work-text-content">
+
+                                    <h3>logout</h3>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
                 {% else %}
                 <p>You are not logged in</p>
+                <h1 class="text-center">Sign up now to use Memory Box</h1>
+
                 <a href="{% url 'login' %}">login</a> |
                 <h2>Sign up</h2>
                 <div>
@@ -37,9 +72,6 @@
                 {% endif %}
             </div>
 
-            <div>
-                <img src="{% static 'images/memorybox.png'  %}" class="img-fluid" alt="Responsive image">
-            </div>
         </div>
 
 
@@ -79,10 +111,10 @@
                         tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
                 </div>
                 <div class="tab-pane fade" id="how">
-                        <div>
-                                <img src="{% static 'images/trophies.jpg'  %}" class="img-fluid" alt="Responsive image">
-                            </div>
-                
+                    <div>
+                        <img src="{% static 'images/trophies.jpg'  %}" class="img-fluid" alt="Responsive image">
+                    </div>
+
                     <h3>Get started TODAY</h3>
                     <p>Lorem ninja ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
                         tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>

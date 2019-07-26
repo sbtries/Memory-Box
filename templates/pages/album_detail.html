@@ -2,22 +2,54 @@
 {% load static %}
 
 {% block content %}
-<h1>{{ album.title }}</h1>
-<h1> {{ user.username }} Album</h1>
-
 <div class="row">
-    <div class="col-md-8">
-        {% for image in images %}
-        {{ image }}
-        <img id="myImg" src="{{ image.image.url}}" alt="{{ image.album_image.title }}" onclick="enlargeImage(this);">
-        {% endfor %}
 
-        <div class="row">{{ album.album_set }}</div>
+    <div class="col align-self-start">
+        <div class="vividworknav">
 
+            <a href="{% url 'dashboard' %}">
+                <img src="{% static 'images/holding-box.png'  %}" class="img-fluid" alt="Responsive image">
+                <div class="work-text-content">
+
+                    <h3>Return to Dashboard</h3>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class=row>
+        <div class="col align-self-start">
+            <div class="container">
+            <h1>{{ album.album_title }}</h1>
+            <h3> Album made by {{ user.username }} </h3>
+            <div class="container">
+                <h5>Description:</h5>
+                <p>{{ album.album_description }}</p>
+                <br>
+                <h5>Year:</h5>
+                <p>{{ album.album_year }}</p>
+            </div>
+
+        </div>
+    </div>
     </div>
 
+</div>
 
+<div class="row">
+    {% for image in images %}
+    <div class="col-lg-3 col-sm-6 col-xs-12">
+        <div class="row">
+            {{ image }}
+        </div>
+        <div class="row">
+            <img id="myImg" class="img-responsive" src="{{ image.image.url}}" alt="{{ image.album_image.title }}"
+                onclick="enlargeImage(this);">
+        </div>
+    </div>
+    {% endfor %}
+</div>
 
+</div>
 
 <div class="modal">
     <!-- Close the image -->
@@ -29,21 +61,5 @@
     <!-- Image text -->
     <div id="imgtext"></div>
 </div>
-
-
-
-
-
-    <div class="col-md-4">
-        <h5>Description:</h5>
-        <p>{{ album.album_description }}</p>
-        <br>
-        <h5>Year:</h5>
-        <p>{{ album.album_year }}</p>
-    </div>
-
-</div>
-
-<script src="{% static 'js/modal.js' %}"></script>
 
 {% endblock %}
