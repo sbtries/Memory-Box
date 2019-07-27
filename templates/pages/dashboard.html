@@ -14,10 +14,9 @@
       <div class="vividworknav">
 
         <a href="{% url 'uploadpage' %}">
-          <img src="{% static 'images/newmemory.png'  %}" class="img-fluid" alt="Responsive image">
+          <img id="dash-icon" src="{% static 'images/newmemory.png'  %}" class="img-fluid" alt="Responsive image">
           <div class="work-text-content">
-
-            <h3>New Memory</h3>
+            <h3>Add New Keepsake</h3>
           </div>
         </a>
       </div>
@@ -27,7 +26,7 @@
     <div class="col-md-12 col-lg-4">
       <div class="vividworknav">
         <a href="{% url 'createalbum' %}">
-          <img src="{% static 'images/newmemorybox.png'  %}" class="img-fluid" alt="Responsive image">
+          <img id="dash-icon" src="{% static 'images/newmemorybox.png'  %}" class="img-fluid" alt="Responsive image">
           <div class="work-text-content">
 
             <h3>Create New Memory Box</h3>
@@ -41,7 +40,7 @@
       <div class="vividworknav">
         <a href="{% url 'allposts' %}">
           <div class="view overlay zoom">
-            <img  src="{% static 'images/boxstack.png'  %}" class="img-fluid" alt="Responsive image">
+            <img  id="dash-icon" src="{% static 'images/boxstack.png'  %}" class="img-fluid" alt="Responsive image">
             <div class="work-text-content">
               <h3>See All Memories</h3>
             </div>
@@ -53,6 +52,17 @@
 
     
   </div>
+
+  <div class="container-fluid">
+    <div class="break">
+      <div class="row-fluid">
+        <div class="span2">
+</div>
+</div>
+</div> 
+</div>   
+
+
 <br>
   <div class=container>
     <h1>Albums</h1>
