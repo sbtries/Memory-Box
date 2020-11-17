@@ -1,5 +1,5 @@
 # Memory-Box
-Capstone Project: photo-feed app to store user memories and simulate the tactile experience of a physical memory box
+photo-feed app to store user memories and simulate the tactile experience of a physical memory box
 
 
 
